@@ -1,0 +1,196 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background-color: #000;
+    color: #fff;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    overflow: hidden;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#game-screen {
+    width: 800px;
+    height: 600px;
+    border: 8px solid #333;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    z-index: 10;
+}
+
+#game-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#dialogue-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: #000;
+    border: 4px solid #fff;
+    padding: 20px;
+    font-size: 10px;
+    z-index: 20;
+}
+
+#dialogue-box.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Pixel Art Styles */
+.pixel-sprite {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    box-shadow: 
+        0 0 0 1px #000,
+        8px 0 0 1px #000,
+        16px 0 0 1px #000,
+        24px 0 0 1px #000,
+        0 8px 0 1px #000,
+        8px 8px 0 1px #000,
+        16px 8px 0 1px #000,
+        24px 8px 0 1px #000,
+        0 16px 0 1px #000,
+        8px 16px 0 1px #000,
+        16px 16px 0 1px #000,
+        24px 16px 0 1px #000,
+        0 24px 0 1px #000,
+        8px 24px 0 1px #000,
+        16px 24px 0 1px #000,
+        24px 24px 0 1px #000;
+}
+
+.image-sprite {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+}
+
+.room-tile {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-color: #666;
+    border: 2px solid #333;
+}
+
+.glowing-tile {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #ff0; }
+    100% { box-shadow: 0 0 20px #ff0; }
+}
+
+.crystal {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #0ff;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.boss {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    background-color: #f00;
+    border-radius: 50%;
+}
+
+.boss-image {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0;
+    border-radius: 50%;
+    animation: explode 2s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* NES Color Palette */
+.nes-black { color: #000000; }
+.nes-white { color: #FFFFFF; }
+.nes-red { color: #7C0000; }
+.nes-cyan { color: #00FFFF; }
+.nes-purple { color: #FF00FF; }
+.nes-green { color: #00FF00; }
+.nes-blue { color: #0000FF; }
+.nes-yellow { color: #FFFF00; }
+.nes-orange { color: #FF7F00; }
+.nes-brown { color: #7F3F00; }
+.nes-light-red { color: #FF7F7F; }
+.nes-dark-grey { color: #3F3F3F; }
+.nes-grey { color: #7F7F7F; }
+.nes-light-green { color: #7FFF7F; }
+.nes-light-blue { color: #7F7FFF; }
+.nes-light-grey { color: #BFBFBF; }
