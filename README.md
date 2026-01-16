@@ -18,11 +18,84 @@ A retro pixel-art mini-game built with HTML, CSS, and Vanilla JavaScript. Experi
 5. **Final Level**: Spectacular birthday reveal with fireworks
 6. **Epilogue**: Personal birthday message with twinkling stars
 
+## Mobile Gaming Guide
+
+This game is fully optimized for mobile devices! Here's everything you need to know:
+
+### 🎮 **Controls Overview**
+- **Boot Screen**: Tap anywhere to start
+- **Level 1**: Touch and drag or swipe to move around the room
+- **Level 2**: Use the virtual arrow buttons (↑ ↓ ← →) that appear at the bottom of the screen
+- **Level 3**: Touch and drag or swipe to move
+- **Final & Epilogue**: Automatic - just watch the celebration!
+
+### 📱 **Mobile Features**
+- **Responsive Design**: Game automatically scales to fit your phone/tablet screen
+- **Touch-Optimized**: Smooth touch controls with visual feedback
+- **Landscape Recommended**: For best experience, rotate to landscape mode
+- **No App Required**: Plays directly in your mobile browser
+- **Battery Friendly**: Lightweight code runs smoothly on mobile devices
+
+### 🎯 **Level-by-Level Mobile Guide**
+
+**Level 1: Spawn Room**
+- Tap/click to start
+- Touch and hold on the screen in the direction you want to move
+- Look for the pulsing glowing tile
+- Walk into it to proceed
+
+**Level 2: Memory Crystals** ⭐
+- Virtual arrow buttons appear at the bottom
+- Touch and hold ↑ ↓ ← → buttons to move
+- Walk into the blue crystal shapes to collect memories
+- Collect all 4 crystals to unlock the next level
+
+**Level 3: Countdown Boss**
+- Touch controls return (no buttons)
+- Move around while the timer counts down
+- No combat needed - just survive until time runs out!
+
+**Final Level: Birthday Reveal**
+- Sit back and enjoy the fireworks show!
+- Automatic celebration with screen effects
+
+### 🔧 **Troubleshooting Mobile**
+- **Controls not responding?** Make sure you're touching the arrow buttons directly
+- **Screen cut off?** Try rotating to landscape or refreshing the page
+- **Buttons not visible?** They only appear on Level 2 - progress through Level 1 first
+- **Game too small?** The game scales automatically, but zoom in/out if needed
+
+### 🌟 **Pro Tips for Mobile**
+- Use two thumbs for better control on larger phones
+- Play in a quiet environment to enjoy the birthday messages
+- Share the URL with friends for multiplayer viewing!
+
 ## How to Play
 
-- Use arrow keys or WASD to move
-- Touch/click to interact
+### Desktop Controls
+- Use **arrow keys** or **WASD** to move the character
+- Press any key or click to start the game
 - Follow on-screen instructions
+
+### Mobile Controls
+- **Starting the Game**: Tap anywhere on the screen to start
+- **Movement (Level 1 & 3)**: Use touch gestures or swipe in the direction you want to move
+- **Movement (Level 2 Only)**: Use the on-screen arrow buttons (↑ ↓ ← →) that appear at the bottom
+  - **Touch & Hold**: Press and hold an arrow button to move continuously in that direction
+  - **Tap**: Quick tap for single steps
+- **Interaction**: Walk into objects (glowing tiles, crystals) to interact with them
+
+### Mobile Tips
+- The game automatically scales to fit your screen
+- On-screen controls only appear during Level 2 (crystal collection)
+- For best experience, play in landscape orientation
+- Touch responsiveness is optimized for smooth gameplay
+
+### Game Mechanics
+- **Grid-based Movement**: Character moves in 8px steps for authentic retro feel
+- **Collision Detection**: Walk into interactive elements to trigger events
+- **Progressive Levels**: Each level unlocks the next automatically
+- **No Time Pressure**: Take your time to enjoy the birthday journey!
 
 ## Deployment on GitHub Pages
 
