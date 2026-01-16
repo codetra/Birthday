@@ -27,9 +27,7 @@ const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/
 // Initialize game
 function init() {
     setupEventListeners();
-    if (isMobile) {
-        mobileControls.classList.remove('hidden');
-    }
+    // Show controls on level 2 for all devices
     gameLoop();
 }
 
@@ -41,17 +39,30 @@ function setupEventListeners() {
     document.addEventListener('touchend', handleTouchEnd);
     document.addEventListener('click', handleClick);
     
-    // Mobile controls
-    if (isMobile) {
-        document.getElementById('up-btn').addEventListener('touchstart', () => keys['ArrowUp'] = true);
-        document.getElementById('up-btn').addEventListener('touchend', () => keys['ArrowUp'] = false);
-        document.getElementById('down-btn').addEventListener('touchstart', () => keys['ArrowDown'] = true);
-        document.getElementById('down-btn').addEventListener('touchend', () => keys['ArrowDown'] = false);
-        document.getElementById('left-btn').addEventListener('touchstart', () => keys['ArrowLeft'] = true);
-        document.getElementById('left-btn').addEventListener('touchend', () => keys['ArrowLeft'] = false);
-        document.getElementById('right-btn').addEventListener('touchstart', () => keys['ArrowRight'] = true);
-        document.getElementById('right-btn').addEventListener('touchend', () => keys['ArrowRight'] = false);
-    }
+    // Mobile controls (now for all devices)
+    document.getElementById('up-btn').addEventListener('touchstart', () => keys['ArrowUp'] = true);
+    document.getElementById('up-btn').addEventListener('touchend', () => keys['ArrowUp'] = false);
+    document.getElementById('up-btn').addEventListener('mousedown', () => keys['ArrowUp'] = true);
+    document.getElementById('up-btn').addEventListener('mouseup', () => keys['ArrowUp'] = false);
+    document.getElementById('up-btn').addEventListener('mouseleave', () => keys['ArrowUp'] = false);
+    
+    document.getElementById('down-btn').addEventListener('touchstart', () => keys['ArrowDown'] = true);
+    document.getElementById('down-btn').addEventListener('touchend', () => keys['ArrowDown'] = false);
+    document.getElementById('down-btn').addEventListener('mousedown', () => keys['ArrowDown'] = true);
+    document.getElementById('down-btn').addEventListener('mouseup', () => keys['ArrowDown'] = false);
+    document.getElementById('down-btn').addEventListener('mouseleave', () => keys['ArrowDown'] = false);
+    
+    document.getElementById('left-btn').addEventListener('touchstart', () => keys['ArrowLeft'] = true);
+    document.getElementById('left-btn').addEventListener('touchend', () => keys['ArrowLeft'] = false);
+    document.getElementById('left-btn').addEventListener('mousedown', () => keys['ArrowLeft'] = true);
+    document.getElementById('left-btn').addEventListener('mouseup', () => keys['ArrowLeft'] = false);
+    document.getElementById('left-btn').addEventListener('mouseleave', () => keys['ArrowLeft'] = false);
+    
+    document.getElementById('right-btn').addEventListener('touchstart', () => keys['ArrowRight'] = true);
+    document.getElementById('right-btn').addEventListener('touchend', () => keys['ArrowRight'] = false);
+    document.getElementById('right-btn').addEventListener('mousedown', () => keys['ArrowRight'] = true);
+    document.getElementById('right-btn').addEventListener('mouseup', () => keys['ArrowRight'] = false);
+    document.getElementById('right-btn').addEventListener('mouseleave', () => keys['ArrowRight'] = false);
 }
 
 function handleKeyDown(e) {
@@ -164,6 +175,9 @@ function startGame() {
 function createLevel1() {
     gameArea.innerHTML = '';
     
+    // Hide mobile controls
+    mobileControls.classList.add('hidden');
+    
     // Create room tiles
     for (let x = 0; x < CANVAS_WIDTH; x += GRID_SIZE) {
         for (let y = 0; y < CANVAS_HEIGHT; y += GRID_SIZE) {
@@ -241,6 +255,9 @@ function renderLevel1() {
 // Level 2: Memory Crystals
 function createLevel2() {
     gameArea.innerHTML = '';
+    
+    // Show mobile controls for level 2
+    mobileControls.classList.remove('hidden');
     
     // Create room
     for (let x = 0; x < CANVAS_WIDTH; x += GRID_SIZE) {
@@ -342,6 +359,9 @@ function renderLevel2() {
 function createLevel3() {
     gameArea.innerHTML = '';
     
+    // Hide mobile controls
+    mobileControls.classList.add('hidden');
+    
     // Create room
     for (let x = 0; x < CANVAS_WIDTH; x += GRID_SIZE) {
         for (let y = 0; y < CANVAS_HEIGHT; y += GRID_SIZE) {
@@ -409,6 +429,9 @@ function createFinal() {
     gameArea.style.backgroundSize = '200px 200px';
     gameArea.style.backgroundPosition = 'center';
     
+    // Hide mobile controls
+    mobileControls.classList.add('hidden');
+    
     // Create fireworks
     for (let i = 0; i < 20; i++) {
         setTimeout(() => {
@@ -458,8 +481,9 @@ function createEpilogue() {
     gameArea.style.backgroundImage = 'url("C:\Users\arjun\OneDrive\Desktop\KanishkaBirthday\happy-birthday-pixel-art-postcard-314998663.webp")';
     gameArea.style.backgroundSize = 'cover';
     gameArea.style.backgroundPosition = 'center';
-    
-    // Personal message
+        // Hide mobile controls
+    mobileControls.classList.add('hidden');
+        // Personal message
     const message = document.createElement('div');
     message.textContent = 'Hey there Kanishka, Sry For the late wish but why not make it a little special so this was something for you.Happiest Birthday to you! May your year be filled with joy, adventure, and amazing memories. You are loved and appreciated, I will be always there for you <3 - Pavitra';
     message.style.position = 'absolute';
