@@ -65,6 +65,52 @@ body {
     display: none;
 }
 
+#mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+#mobile-controls button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #000;
+    font-size: 24px;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#mobile-controls button:active {
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
+#up-btn {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#left-btn {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#right-btn {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#down-btn {
+    grid-column: 2;
+    grid-row: 3;
+}
+
 .hidden {
     display: none;
 }

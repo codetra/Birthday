@@ -19,10 +19,17 @@ const gameArea = document.getElementById('game-area');
 const dialogueBox = document.getElementById('dialogue-box');
 const dialogueText = document.getElementById('dialogue-text');
 const levelIndicator = document.getElementById('level-indicator');
+const mobileControls = document.getElementById('mobile-controls');
+
+// Detect mobile
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 // Initialize game
 function init() {
     setupEventListeners();
+    if (isMobile) {
+        mobileControls.classList.remove('hidden');
+    }
     gameLoop();
 }
 
@@ -33,6 +40,18 @@ function setupEventListeners() {
     document.addEventListener('touchstart', handleTouchStart);
     document.addEventListener('touchend', handleTouchEnd);
     document.addEventListener('click', handleClick);
+    
+    // Mobile controls
+    if (isMobile) {
+        document.getElementById('up-btn').addEventListener('touchstart', () => keys['ArrowUp'] = true);
+        document.getElementById('up-btn').addEventListener('touchend', () => keys['ArrowUp'] = false);
+        document.getElementById('down-btn').addEventListener('touchstart', () => keys['ArrowDown'] = true);
+        document.getElementById('down-btn').addEventListener('touchend', () => keys['ArrowDown'] = false);
+        document.getElementById('left-btn').addEventListener('touchstart', () => keys['ArrowLeft'] = true);
+        document.getElementById('left-btn').addEventListener('touchend', () => keys['ArrowLeft'] = false);
+        document.getElementById('right-btn').addEventListener('touchstart', () => keys['ArrowRight'] = true);
+        document.getElementById('right-btn').addEventListener('touchend', () => keys['ArrowRight'] = false);
+    }
 }
 
 function handleKeyDown(e) {
