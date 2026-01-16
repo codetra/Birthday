@@ -32,6 +32,46 @@ body {
     overflow: hidden;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 850px) {
+    #game-screen {
+        width: 800px;
+        height: 600px;
+        border: 4px solid #333;
+        transform: scale(0.8);
+        transform-origin: top center;
+        margin-top: 20px;
+    }
+    
+    #mobile-controls {
+        bottom: 20px;
+        width: 120px;
+        height: 120px;
+        gap: 5px;
+        z-index: 10;
+    }
+    
+    #mobile-controls button {
+        font-size: 18px;
+        padding: 5px;
+    }
+    
+    #hud {
+        font-size: 8px;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+    }
+    
+    #dialogue-box {
+        bottom: 160px; /* Above mobile controls */
+        left: 20px;
+        right: 20px;
+        padding: 15px;
+        font-size: 8px;
+    }
+}
+
 #hud {
     position: absolute;
     top: 10px;
